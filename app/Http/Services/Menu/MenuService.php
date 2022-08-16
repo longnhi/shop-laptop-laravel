@@ -23,7 +23,7 @@ class MenuService
     public function getAll()
     {
         //sap xep theo lon nhat va phan trang
-        return Menu::orderbyDesc('id')->paginate(20);
+        return Menu::withCount('products')->orderbyDesc('id')->paginate(20);
     }
 
     public function create($request)
@@ -65,7 +65,10 @@ class MenuService
     public function destroy($request)
     {
         $id = (int)$request->input('id');
-        $menu = Menu::where('id', $id)->first();
+        $menu = Menu::where('id', $id)->withCount('products')->first();
+        if($menu->products_count!=0){
+            return false;
+        }
         if ($menu) {
             return Menu::where('id', $id)->orWhere('parent_id', $id)->delete();
         }

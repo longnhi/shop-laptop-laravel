@@ -11,7 +11,7 @@
 //         type : 'POST',
 //         dataType : 'JSON',
 //         data : { page },
-//         url : '/services/load-product-user',
+//         url : '/laptop-selling-website/services/load-product-user',
 //         success : function (result) {
 //             console.log(result);
 //             // if (result.html !== '') {

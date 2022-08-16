@@ -8,7 +8,8 @@
                 <th>Name</th>
                 <th>Active</th>
                 <th>Update</th>
-                <th style="width: 100px">&nbsp;</th>
+                <th>Số sản phẩm</th>
+                <th style="width: 100px">Action</th>
             </tr>
         </thead>
         <tbody>

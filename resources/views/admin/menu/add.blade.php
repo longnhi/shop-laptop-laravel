@@ -13,7 +13,7 @@
                 <input type="text" name="name" class="form-control"  placeholder="Nhập tên danh mục">
             </div>
 
-            <div class="form-group">
+            <div class="form-group" hidden>
                 <label>Danh Mục</label>
                 <select class="form-control" name="parent_id">
                     <option value="0"> Danh Mục Cha </option>
@@ -28,7 +28,7 @@
                 <textarea name="description" class="form-control"></textarea>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" hidden>
                 <label>Mô Tả Chi Tiết</label>
                 <textarea name="content" id="content" class="form-control"></textarea>
             </div>

@@ -32,4 +32,10 @@ class LoginController extends Controller
         Session::flash('error', 'Sai Email hoặc Password');
         return redirect()->back();
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
+    }
 }

@@ -43,4 +43,10 @@ class MainUserController extends Controller
     //     // }
     //     // return response()->json(['html' => '']);
     // }
+
+    public function contact() {
+        return view('contact', [
+            'title' => 'Liên hệ'
+        ]);
+    }
 }

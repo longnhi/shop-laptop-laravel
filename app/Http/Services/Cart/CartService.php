@@ -115,4 +115,28 @@ class CartService
 
         return Cart::insert($data);
     }
+
+    public function getCustomer()
+    {
+        return Customer::orderByDesc('id')->paginate(10);
+    }
+
+    public function changeCustomer($customer)
+    {
+        $customer->status=2;
+        $customer->save();
+        return true;
+    }
+
+    public function getProductForCart($customer)
+    {
+        return $customer->carts()->with(['product'=>function($query){
+            $query->select('id','name','thumb');
+        }])->get();
+    }
+
+    public function getCustomerAll()
+    {
+        return Customer::withCount('carts')->orderByDesc('id')->paginate(10);
+    }
 }

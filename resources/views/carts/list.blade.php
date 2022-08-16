@@ -3,7 +3,7 @@
 @section('çontent')
 
 <div class="hero-wrap hero-bread"
-    style="background-image: url('/laptop-selling-website/public/template/users/images/bg-11.jpg');">
+    style="background-image: url('/template/users/images/bg-11.jpg');">
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
@@ -43,7 +43,7 @@
 
                                 <tr class="text-center">
                                     <td class="product-remove"><a
-                                            href="/laptop-selling-website/gio-hang/delete/{{ $product->id }}"><span
+                                            href="/gio-hang/delete/{{ $product->id }}"><span
                                                 class="ion-ios-close"></span></a></td>
 
                                     <td class="image-prod">
@@ -105,35 +105,35 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Tên khách hàng</label>
-                                <input type="text" class="form-control" name="name" placeholder="">
+                                <input type="text" class="form-control" name="name" placeholder="" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Số điện thoại</label>
-                                <input type="text" class="form-control" name="phone" placeholder="">
+                                <input type="text" class="form-control" name="phone" placeholder="" required>
                             </div>
                         </div>
                         <div class="w-100"></div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Địa chỉ giao hàng</label>
-                                <input type="text" class="form-control" name="address" placeholder="">
+                                <input type="text" class="form-control" name="address" placeholder="" required>
                             </div>
                         </div>
                         <div class="w-100"></div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Địa chỉ email</label>
-                                <input type="text" class="form-control" name="email" placeholder="">
+                                <input type="text" class="form-control" name="email" placeholder="" required>
                             </div>
                         </div>
                         <div class="w-100"></div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Ghi chú</label>
-                                <textarea name="note" id="" cols="30" rows="7" class="form-control"
-                                    placeholder=""></textarea>
+                                <textarea name="note" cols="30" rows="7" class="form-control"
+                                    placeholder="" required></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -151,22 +151,4 @@
     <?php } ?>
 </section>
 
-<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
-    <div class="container py-4">
-        <div class="row d-flex justify-content-center py-5">
-            <div class="col-md-6">
-                <h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
-                <span>Get e-mail updates about our latest shops and special offers</span>
-            </div>
-            <div class="col-md-6 d-flex align-items-center">
-                <form action="#" class="subscribe-form">
-                    <div class="form-group d-flex">
-                        <input type="text" class="form-control" placeholder="Enter email address">
-                        <input type="submit" value="Subscribe" class="submit px-3">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
 @endsection

@@ -19,6 +19,7 @@ class Helper
                         <td>' . $char . $menu->name . '</td>
                         <td>' . self::active($menu->active) . '</td>
                         <td>' . $menu->updated_at . '</td>
+                        <td>' . $menu->products_count . '</td>
                         <td>
                             <a class="btn btn-primary btn-sm" href="/admin/menus/edit/' . $menu->id . '">
                                 <i class="fas fa-edit"></i>
@@ -97,7 +98,7 @@ class Helper
             if ($menu->parent_id == $parent_id) {
                 $html .= '
                     <li class="nav-item">
-                        <a href="/laptop-selling-website/danh-muc/' . $menu->id . '-' . Str::slug($menu->name, '-') .'.html" class="nav-link">
+                        <a href="/danh-muc/' . $menu->id . '-' . Str::slug($menu->name, '-') .'.html" class="nav-link">
                             ' . $menu->name . '
                         </a>';
 

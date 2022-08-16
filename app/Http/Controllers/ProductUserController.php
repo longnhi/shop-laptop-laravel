@@ -23,4 +23,15 @@ class ProductUserController extends Controller
             'products_more' => $product_more
         ]);
     }
+
+    public function search(Request $request) {
+        $product_search = $this->productService->search($request);
+        $keyword = $request->keyword;
+
+        return view('products.search', [
+            'title' => "Tìm kiếm sản phẩm",
+            'keyword' => $keyword,
+            'products' => $product_search
+        ]);
+    }
 }

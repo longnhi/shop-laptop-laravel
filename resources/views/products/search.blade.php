@@ -18,17 +18,31 @@
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-10 mb-5 text-center">
-                <ul class="product-category">
-                    <li><a href="{{ request()->url() }}" class="active">Tất cả</a></li>
-                    <li><a href="{{ request()->fullUrlWithQuery(['price_sale' => 'asc']) }}">Giá tăng dần</a></li>
-                    <li><a href="{{ request()->fullUrlWithQuery(['price_sale' => 'desc']) }}">Giá giảm dần</a></li>
-                </ul>
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <h2 class="mb-4">Tìm thấy kết quả với từ khóa <span style="color: #82ae46;">"{{ $keyword }}"</span>
+                </h2>
+                <br><br>
             </div>
         </div>
         <div class="row">
 
             @include('products.list')
+
+        </div>
+        <div class="row mt-5">
+            <div class="col text-center">
+                <div class="block-27">
+                    <ul>
+                        <li><a href="#">&lt;</a></li>
+                        <li class="active"><span>1</span></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
 
         </div>
     </div>

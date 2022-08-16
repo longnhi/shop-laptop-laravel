@@ -12,8 +12,14 @@ use App\Http\Controllers\MenuUserController;
 use App\Http\Controllers\ProductUserController;
 use App\Http\Controllers\CartController;
 
+Route::get('generate', function (){
+    \Illuminate\Support\Facades\Artisan::call('storage:link');
+    echo 'ok';
+});
+
 Route::get('admin/users/login', [LoginController::class, 'index'])->name('login');
 Route::post('admin/users/login/store', [LoginController::class, 'store']);
+Route::get('admin/users/login/logout', [LoginController::class, 'logout']);
 
 Route::middleware(['auth'])->group(function () {
 
@@ -54,17 +60,26 @@ Route::middleware(['auth'])->group(function () {
             Route::post('edit/{slider}', [SliderController::class, 'update']);
             Route::DELETE('destroy', [SliderController::class, 'destroy']);
         });
+
+        #Cart
+        Route::get('customers', [\App\Http\Controllers\Admin\CartController::class,'index']);
+
+        Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class,'show']);
+        Route::get('customers/vanchuyen/{customer}', [\App\Http\Controllers\Admin\CartController::class,'change']);
+
+        Route::get('test', [\App\Http\Controllers\Admin\CartController::class,'index']);
     });
 });
 
 Route::get('/', [App\Http\Controllers\MainUserController::class, 'index']);
 Route::get('/trang-chu', [App\Http\Controllers\MainUserController::class, 'index']);
 
-//Route::post('/services/load-product-user', [App\Http\Controllers\MainUserController::class, 'loadProductUser']);
+// Route::post('/services/load-product-user', [App\Http\Controllers\MainUserController::class, 'loadProductUser']);
 
 Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuUserController::class, 'index']);
 
 Route::get('san-pham/{id}-{slug}.html', [App\Http\Controllers\ProductUserController::class, 'index']);
+Route::post('/search', [App\Http\Controllers\ProductUserController::class, 'search']);
 
 Route::post('/them-gio-hang', [App\Http\Controllers\CartController::class, 'index']);
 Route::get('/gio-hang', [App\Http\Controllers\CartController::class, 'show']);
@@ -74,3 +89,5 @@ Route::get('/gio-hang/delete/{id}', [App\Http\Controllers\CartController::class,
 Route::post('/gio-hang', [App\Http\Controllers\CartController::class, 'addCart']);
 
 Route::get('/thanh-toan', [App\Http\Controllers\CartController::class, 'checkout']);
+
+Route::get('/lien-he', [App\Http\Controllers\MainUserController::class, 'contact']);
